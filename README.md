@@ -1,6 +1,8 @@
-# Skills
+# Badjano Stack
 
-Public Agent Skills for Cursor (and compatible tools). Each folder is a skill with a `SKILL.md` entry point.
+Public Agent Skills for Cursor (and compatible tools). Opinionated engineering habits — code craft, process, and Unity — packaged so agents follow them consistently.
+
+Each folder is a skill with a `SKILL.md` entry point.
 
 ## Code & architecture
 
