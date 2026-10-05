@@ -14,7 +14,7 @@ Public Agent Skills for Cursor (and compatible tools). Each folder is a skill wi
 
 | Skill | Purpose |
 |---|---|
-| [`commit-scope`](commit-scope/) | Keep commits scoped to one logical change |
+| [`commit-scope`](commit-scope/) | Auto-commit every change on `feature/*` (never `develop`); scoped staging; reject → hard reset |
 | [`conflict-resolution`](conflict-resolution/) | Systematic merge-conflict handling |
 | [`precision-executor`](precision-executor/) | Break failure loops with minimal viable actions |
 
@@ -22,8 +22,18 @@ Public Agent Skills for Cursor (and compatible tools). Each folder is a skill wi
 
 | Skill | Purpose |
 |---|---|
-| [`unity-architecture`](unity-architecture/) | Unity architecture, SerializeField rules, pooling, perf, SO data patterns |
+| [`unity-architecture`](unity-architecture/) | Unity architecture, SerializeField rules, pooling, SO data patterns, verification gate |
+| [`unity-awaitable`](unity-awaitable/) | Unity 6 `Awaitable` async rules (PlayerLoop, cancellation, pooling) |
+| [`unity-canvas-ui-expert`](unity-canvas-ui-expert/) | uGUI Canvas layout, prefab YAML, soft-close overlays, surgical prefab edits |
+| [`unity-cli`](unity-cli/) | Headless Editor CLI compile/build when MCP cannot verify the target project |
+| [`unity-dots`](unity-dots/) | DOTS/ECS: chunks, structural changes, `IJobEntity`, Burst |
+| [`unity-editor-extensibility`](unity-editor-extensibility/) | Custom inspectors, SerializedObject, UI Toolkit, Scene View Overlays |
+| [`unity-mcp-project-settings`](unity-mcp-project-settings/) | Unity MCP config only inside Unity projects (`UserSettings/mcp.json`) |
+| [`unity-mcp-skill`](unity-mcp-skill/) | Orchestrate Unity Editor via MCP tools and resources |
+| [`unity-optimization`](unity-optimization/) | Profile-first FPS/GC/GPU optimization playbook |
+| [`unity-render-graph`](unity-render-graph/) | Unity 6 URP/HDRP Render Graph custom passes |
 | [`unity-runtime-guardian`](unity-runtime-guardian/) | Runtime debugging: console, asserts, logging discipline |
+| [`unity-test-framework`](unity-test-framework/) | EditMode/PlayMode UTF tests, AAA, domain-reload-safe state |
 
 ## Install
 

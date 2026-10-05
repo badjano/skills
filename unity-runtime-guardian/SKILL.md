@@ -14,7 +14,7 @@ Most bugs in VR multiplayer projects surface at runtime — not at compile time 
 
 Before writing logic, ensure invariants are protected:
 - Use `Debug.Assert(condition, "Message")` in `Awake()` and at the start of complex methods.
-- Example: `Debug.Assert(_weaponConfig != null, "[Weapon] Weapon config is missing!");`
+- Example: `Debug.Assert(_weaponConfig != null, "[PlayerWeapon] Weapon config is missing!");`
 - Catch configuration and state errors at the boundary, not deep in the call stack.
 
 ## 2. Check Unity Console First
@@ -38,7 +38,7 @@ The live editor state is the ground truth:
 When a task requires changing prefab or scene assets:
 1. **Prefer Unity MCP tools** (`manage_asset`, `manage_scene`, etc.) so changes go through Editor APIs.
 2. **Avoid hand-editing YAML** (serialization format is brittle).
-3. **Use Editor scripts** only when mutation cannot be done reliably through MCP (batch updates, `SerializedObject` logic, project settings).
+3. **Use Editor scripts** only when mutation cannot be done reliably through MCP (batch updates, `SerializedObject` logic, project settings). Follow `unity-editor-extensibility`: mutate via `SerializedObject`/`SerializedProperty`; new custom UI → UI Toolkit, not IMGUI.
 4. Place scripts under `Assets/Editor/Automation/`, make them idempotent, and expose via `[MenuItem]`.
 
 ## 5. Add Debug.Log Statements for Runtime Visibility
