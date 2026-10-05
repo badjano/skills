@@ -88,7 +88,7 @@ void StartRound()
 {
     _timer = _config.RoundDuration;
     _isActive = true;
-    BroadcastRoundStartRpc();
+    photonView.RPC("Rpc_NotifyRoundStart", RpcTarget.All);
     foreach (var player in _players)
     {
         player.transform.position = _spawnPoints[player.Index].position;
@@ -300,7 +300,7 @@ Product / performance / feature PRs must stay review-focused. **Do not ship temp
 
 That includes:
 - One-off Profiler / load-timing probes, capture menus, or Editor “Arm Capture” tooling
-- Production hooks whose only purpose is that probe (one-off load timers, reflection into private fields, etc.)
+- Production hooks whose only purpose is that probe (`OnLoadPipelineStarted`, reflection readers of private `_done`, etc.)
 - Extra `Debug.Log` / spammy logging added while investigating
 - `#if UNITY_EDITOR` helpers that exist solely for a single measurement session
 - Commented-out experiments, leftover `TODO: remove`, or “temporary” MonoBehaviours left in scenes/prefabs
@@ -309,7 +309,7 @@ If the user says “commit” without mentioning the debug files, **exclude them
 
 ### Allowed (keep minimal)
 
-- Reusing **existing** project log gates (e.g. a shared `LogsEnabled` flag)
+- Reusing **existing** project log gates (`GameManager.LogsEnabled`, etc.)
 - Tiny, permanent DeveloperTool utilities only when the team already owns that pattern **and** the change is intentional product tooling — not session scaffolding
 - Evidence belongs in Profiler screenshots / Notion / PR description — **not** in committed debug code
 

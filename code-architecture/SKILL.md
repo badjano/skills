@@ -10,7 +10,7 @@ description: >
 
 ## Priority: Readability and Maintainability
 
-Every change must leave code **clearer than before**. Prefer simple, obvious code over clever abstractions. When in doubt, choose the approach that is easiest for the next developer to read.
+This codebase is being actively cleaned up. Every change must leave code **clearer than before**. Prefer simple, obvious code over clever abstractions. When in doubt, choose the approach that is easiest for the next developer to read.
 
 ---
 
@@ -75,7 +75,7 @@ Clients should not depend on methods they don't use.
 
 High-level modules must not depend on low-level modules. Both should depend on **abstractions**.
 
-- Systems depend on **interfaces** (`ICloudDataService`), not concrete implementations (`CloudDataServiceClient`).
+- Systems depend on **interfaces** (`ICloudDataService`), not concrete implementations (`PlayFabDataService`).
 - Use a **Service Locator** or DI container to resolve interfaces at runtime.
 - Consumers request `IInventoryService`, not `InventoryManager`.
 - Networking code depends on `INetworkService`, not raw transport APIs, so the layer can be swapped.
